@@ -5,14 +5,13 @@ from flask_migrate import Migrate
 
 
 app = Flask(__name__)
+from views import index
 app.config.from_object(Development)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 
-@app.route('/')
-def index():
-    return "blog home" 
+ 
 
 from mod_admin import admin
 from mod_users import users
